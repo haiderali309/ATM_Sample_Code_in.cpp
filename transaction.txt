@@ -1,0 +1,12 @@
+
+
+FUNDS TRANSFER TO HBL BANK				              5250
+ Time				              Thu Mar 02 13:46:16 2023
+
+
+Account number         4626543166565
+
+
+AMOUNT DEPOSIT 				            5020
+ TIME 				            Thu Mar 02 13:46:16 2023
+
