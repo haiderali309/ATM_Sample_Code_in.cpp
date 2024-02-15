@@ -1,5 +1,6 @@
 //                                                    Libraires
 #include<iostream>
+#include"string"
 #include<iomanip>
 #include<cstring>
 #include<time.h>
@@ -8,7 +9,7 @@
 using namespace std;
 //                                                    Variables
 int enter_pin;
-char log[20];
+char login[20];
 struct accounter
 {
     int save_pin;
@@ -20,7 +21,7 @@ struct accounter
 double lone_limit=50000;
 char value;
 int chose_button;
-int count=0;
+int counter=0;
 int opt;
 int opt2;
 int dpos_money;
@@ -89,7 +90,7 @@ int main(){
         cin.ignore();
         getline(cin,person.name);
         cout<<"\n\n\t\t|----> CREATE    YOUR   LOGIN ( A*** ) :  ";
-        cin.get(log,20);
+        cin.get(login,20);
         cout<<"\n\n\t\t|-------- CREAT  YOUR  [4]  DIGIT  PIN  (****)  :  ";
         cin>>person.save_pin;
         file1<<person.save_pin<<endl;
@@ -97,7 +98,7 @@ int main(){
         cin>>person.balance;
         file1<<person.balance;
         file1<<person.name<<endl;
-        file1<<log<<endl;
+        file1<<login<<endl;
         cout<<"\n\n\n|===================-_-_-_-_-_-_-_-A C C O U N T  H A S  B E E N  C R E A T E D-_-_-_-_-_-_-_-==================|\n\n\n";
         file1.close();
         ofstream fa;
@@ -112,17 +113,17 @@ int main(){
     {
         cout<<"\n\n\t\t|----  ENTER  YOUR  LOGIN  ID (A***)----| : ";
         cin.ignore();
-        cin.get(log,20);
+        cin.get(login,20);
         fstream file ("Account.bat",ios :: in);
         file.seekg(5,ios :: beg);
         file>>person.balance;
         getline(file,person.name);
         getline(file,enter_id);
-        if(log==enter_id)
+        if(login==enter_id)
 
         {
  			Sleep(600);
-            while(count<3)
+            while(counter<3)
             {
                 cout<<"\n\n\t\t|---- ENTER  YOUR  [4]  DIGIT  PIN ----| : ";
                 cin>>enter_pin;
@@ -198,7 +199,7 @@ int main(){
                 {
                     cout<<endl<<endl<<endl;
                     cout<<"\n\n\n\t\t|-------- ENTER   WORNG    PIN ! -------|\n\n\n";
-                    count++;
+                    counter++;
                 }
             }
             }
@@ -263,7 +264,7 @@ void cash_dpos()
 		        cout<<"\n\n\t\tAmount  Has been Deposited to your Account...\n\n";
 		        ofstream f;
 		        f.open("Account.bat",ios ::out);
-		        f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+		        f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
 		        f.close();
 		        ifstream file1 ("Account.bat",ios :: in);
 		        file1.seekg(5,ios :: beg);
@@ -317,7 +318,7 @@ void cheque()
             cout<<endl;
             ofstream f;
             f.open("Account.bat",ios ::out);
-            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
             f.close();
             ifstream file1 ("Account.bat",ios :: in);
             file1.seekg(5,ios :: beg);
@@ -521,7 +522,7 @@ void bill_pay()
             cout<<endl;
             ofstream f;
             f.open("Account.bat",ios ::out);
-            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
             f.close();
             ifstream file1 ("Account.bat",ios :: in);
             file1.seekg(5,ios :: beg);
@@ -598,7 +599,7 @@ void transfer()
             cout<<endl;
             ofstream f;
             f.open("Account.bat",ios ::out);
-            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
             f.close();
             ifstream file1 ("Account.bat",ios :: in);
             file1.seekg(5,ios :: beg);
@@ -780,7 +781,7 @@ void fee()
             cout<<endl;
             ofstream f;
             f.open("Account.bat",ios ::out);
-            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
             f.close();
             ifstream file1 ("Account.bat",ios :: in);
             file1.seekg(5,ios :: beg);
@@ -876,7 +877,7 @@ void challan()
             cout<<endl;
             ofstream f;
             f.open("Account.bat",ios ::out);
-            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
             f.close();
             ifstream file1 ("Account.bat",ios :: in);
             file1.seekg(5,ios :: beg);
@@ -917,7 +918,7 @@ void my_pin()
         cout<<endl;
         ofstream f;
         f.open("data.txt",ios ::out);
-        f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+        f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
         f.close();
     }
     else
@@ -1010,7 +1011,7 @@ void LOAN()
     {
             ofstream f;
             f.open("Account.bat",ios ::out);
-            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<person.loan<<endl<<person.refund<<endl<<Time<<endl;
+            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<person.loan<<endl<<person.refund<<endl<<Time<<endl;
             f.close();
             ifstream file1 ("Account.bat",ios :: in);
             file1.seekg(5,ios :: beg);
@@ -1104,7 +1105,7 @@ void ATM()
             cout<<endl;
             ofstream f;
             f.open("Account.bat",ios ::out);
-            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<log<<endl<<Time<<endl;
+            f<<person.save_pin<<endl<<person.balance<<person.name<<endl<<login<<endl<<Time<<endl;
             f.close();
             ifstream file1 ("Account.bat",ios :: in);
             file1.seekg(5,ios :: beg);
